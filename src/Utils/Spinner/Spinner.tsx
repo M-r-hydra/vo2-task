@@ -25,7 +25,7 @@ const Spinner: React.FunctionComponent<SpinnerProps> = ({
     <span
       className={`${styles.spinnerContianer} `}
       style={{
-        background: color || constants.themeColor,
+        background: color || constants.red,
         ...style,
       }}
     >

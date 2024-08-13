@@ -16,17 +16,12 @@ import { Route, Routes } from "react-router-dom";
 import { routes } from "./Routes/routes";
 // Routers
 
-// Redux
-import { useAppSelector } from "./StateManagers/RTK/store";
-// Redux
-
 // Toasts
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Toasts
 
 const App = () => {
-  const { sidebarStatus } = useAppSelector((state) => state.common);
   return (
     <div
       className={`${styles.appContainer} w-full h-screen rtl flex flex-row items-start justify-between`}
