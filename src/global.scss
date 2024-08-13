@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: iran-sans;
+  src: url("./Fonts/IRANSansWeb\(FaNum\).ttf");
+}
+
+* {
+  font : {
+    family: iran-sans;
+  }
+}
