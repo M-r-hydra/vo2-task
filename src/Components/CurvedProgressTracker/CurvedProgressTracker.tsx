@@ -57,7 +57,7 @@ const CurvedProgressTracker: React.FunctionComponent<
 
   return (
     <div
-      className="relative w-[450px] h-[100px]"
+      className="relative w-[450px] h-[100px] mt-4"
       // style={{ position: "relative", width: "450px", height: "100px" }}
     >
       <div className={`${styles.curvedProgressTracker} absolute left-0 z-10`}>

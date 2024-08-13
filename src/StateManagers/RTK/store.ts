@@ -7,6 +7,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { loadingSlice } from "./Slices/loadingSlice/loadingSlice";
 import { commonSlice } from "./Slices/CommonSlice/commonSlice";
 import { competitionsSlice } from "./Slices/CompetitonsSlice/CompetitionsSliceSlice";
+import { HomePageDataSlice } from "./Slices/HomePageDataSlice/HomePageDataSlice";
 // Slices
 
 const ngProgressMiddleware: Middleware =
@@ -29,6 +30,7 @@ export const store = configureStore({
   reducer: {
     common: commonSlice.reducer,
     competitions: competitionsSlice.reducer,
+    homePageData: HomePageDataSlice.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>

@@ -5,6 +5,7 @@ import styles from "./Sidebar.module.css";
 // Icons
 import { AiFillHome } from "react-icons/ai";
 import { IoCalendarOutline } from "react-icons/io5";
+import { LuTestTube } from "react-icons/lu";
 // Icons
 
 // Models
@@ -34,6 +35,21 @@ const sidebarItems: T_SidebarItem[] = [
     title: "تقویم",
     Icon: IoCalendarOutline,
     routeToNavigate: "/calender",
+  },
+  {
+    title: "مسیر تست",
+    Icon: LuTestTube,
+    routeToNavigate: "/route",
+  },
+  {
+    title: " مسیر تست 2",
+    Icon: LuTestTube,
+    routeToNavigate: "/route-x",
+  },
+  {
+    title: " مسیر تست 3",
+    Icon: LuTestTube,
+    routeToNavigate: "/route-a",
   },
 ];
 
