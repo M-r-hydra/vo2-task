@@ -2,6 +2,10 @@
 import React, { useRef, useEffect, useState } from "react";
 // React
 
+// CSS
+import styles from "./CurvedProgressTracker.module.css";
+// CSS
+
 // Constants
 import { constants } from "../../Constants/constants";
 // Constants
@@ -23,7 +27,7 @@ const CurvedProgressTracker: React.FunctionComponent<
 > = ({ totalDays, milestones }) => {
   const pathRef = useRef<any>(null);
   const [positions, setPositions] = useState<milestone[]>([]);
-  const [hoveredDay, setHoveredDay] = useState(null);
+  const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
   useEffect(() => {
     if (pathRef.current) {
@@ -38,8 +42,27 @@ const CurvedProgressTracker: React.FunctionComponent<
     }
   }, [totalDays, milestones]);
 
+  useEffect(() => {
+    // function to reset and remove the selected Day ...
+    const timeOut = setTimeout(() => {
+      if (typeof hoveredDay === "number") {
+        setHoveredDay(null);
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [hoveredDay]);
+
   return (
-    <div style={{ position: "relative", width: "450px", height: "100px" }}>
+    <div
+      className="relative w-[450px] h-[100px]"
+      // style={{ position: "relative", width: "450px", height: "100px" }}
+    >
+      <div className={`${styles.curvedProgressTracker} absolute left-0 z-10`}>
+        {hoveredDay}
+      </div>
       <svg width="100%" height="100" viewBox="0 0 450 100">
         {/* Complete Path */}
         <path
@@ -49,6 +72,7 @@ const CurvedProgressTracker: React.FunctionComponent<
           strokeWidth="2"
           fill="transparent"
         />
+        {/* Complete Path */}
 
         {/* Solid Part of Path */}
         {hoveredDay !== null && (
@@ -62,19 +86,31 @@ const CurvedProgressTracker: React.FunctionComponent<
             }, ${pathRef.current.getTotalLength()}`}
           />
         )}
+        {/* Solid Part of Path */}
 
         {/* Milestones */}
-        {positions.map((position: any, index) => (
+        {positions.map((position, index) => (
           <circle
             key={index}
             cx={position.x}
             cy={position.y}
             r="5"
             fill={constants.meloRed}
-            onMouseOver={() => setHoveredDay(position.day)}
-            onMouseOut={() => setHoveredDay(null)}
+            className="cursor-pointer"
+            // onMouseOver={() => setHoveredDay(position.day)}
+            // onMouseOut={() => setHoveredDay(null)}
+            onClick={() => {
+              setHoveredDay((prevState) =>
+                typeof prevState === "number"
+                  ? prevState === position.day
+                    ? null
+                    : position.day
+                  : position.day
+              );
+            }}
           />
         ))}
+        {/* Milestones */}
       </svg>
 
       {/* Tooltip Elements */}
@@ -102,6 +138,7 @@ const CurvedProgressTracker: React.FunctionComponent<
           <div>{position.label}</div>
         </div>
       ))}
+      {/* Tooltip Elements */}
     </div>
   );
 };
