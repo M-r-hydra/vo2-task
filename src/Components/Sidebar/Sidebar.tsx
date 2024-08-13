@@ -45,7 +45,7 @@ const Sidebar = () => {
     <div
       className={`${styles.sidebarContainer} ${
         sidebarStatus === "full" ? styles.full : ""
-      } flex flex-col h-97p mt-2p box-border items-center px-2 pt-10`}
+      } flex flex-col h-98p mt-1.5p box-border items-center px-2 pt-10`}
     >
       <img
         src={logo}

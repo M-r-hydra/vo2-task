@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAllCompetitionsService } from "../../../../Services/Competitions/get/getAllCompetitionsService";
 import { I_Competition } from "../../../../Models/interfaces/Competitions/CompetitionsInterfaces";
+import { resetReferenceOfObject } from "../../../../Utils/resetReferenceOfObject";
 
 const initialState: {
   competitions: {
@@ -36,7 +37,11 @@ export const getAsyncCompetitions = createAsyncThunk(
 export const competitionsSlice = createSlice({
   name: "competitions",
   initialState,
-  reducers: {},
+  reducers: {
+    resetCompetitions: (state) => {
+      state.competitions = resetReferenceOfObject(initialState.competitions);
+    },
+  },
   extraReducers: (builder) => {
     //
     //

@@ -58,13 +58,7 @@ const App = () => {
       {/*  */}
       {/*  */}
       {/*  */}
-      <div
-        className={`${
-          sidebarStatus === "full"
-            ? "w-[calc(100%_-_240px)]"
-            : "w-[calc(100%_-_140px)]"
-        } pt-2p`}
-      >
+      <div className={`w-full pt-2p`}>
         <Routes>
           {routes.map((item) => (
             <Route path={item.path} element={<item.Element />} />

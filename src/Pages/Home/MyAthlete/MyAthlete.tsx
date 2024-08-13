@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React from "react";
 // React
 
 // CSS
@@ -18,13 +18,13 @@ import DropDown from "../../../Components/DropDown/DropDown";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoCalendarOutline } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa";
-import { customizedToast } from "../../../Utils/CustomizedToast/customizedToast";
 // Icons
 
-const MyAthlete = () => {
-  const [isAllAtheleteInScreen, setIsAllathleteInScreen] =
-    useState<boolean>(false);
+// Utils
+import { customizedToast } from "../../../Utils/CustomizedToast/customizedToast";
+// Utils
 
+const MyAthlete = () => {
   return (
     <div className={`${styles.myAthleteContainer} w-full mt-6`}>
       <div className={`flex flex-row items-center justify-between`}>

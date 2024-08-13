@@ -15,7 +15,10 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../StateManagers/RTK/store";
-import { getAsyncCompetitions } from "../../../StateManagers/RTK/Slices/CompetitonsSlice/CompetitionsSliceSlice";
+import {
+  competitionsSlice,
+  getAsyncCompetitions,
+} from "../../../StateManagers/RTK/Slices/CompetitonsSlice/CompetitionsSliceSlice";
 // Redux
 
 // Utils
@@ -46,10 +49,16 @@ const FutureCompetitions: React.FunctionComponent<FutureCompetitionsProps> = ({
     };
   }, [dataGetter]);
 
+  useEffect(() => {
+    return () => {
+      dispatch(competitionsSlice.actions.resetCompetitions());
+    };
+  }, [dispatch]);
+
   return (
     <div
       className={`${styles.futureCompetitionsContainer} 
-w-full
+        w-full
         ${containerClassName}
         `}
     >
@@ -61,8 +70,8 @@ w-full
         showAfterDone={
           <div
             className={`
-        w-full flex flex-row items-center justify-between flex-wrap gap-x-2 gap-y-4
-          `}
+            w-full flex flex-row items-center justify-between flex-wrap gap-x-2 gap-y-4
+            `}
           >
             {data.map((item) => (
               <CompetitionItem key={item.id} data={item} />
