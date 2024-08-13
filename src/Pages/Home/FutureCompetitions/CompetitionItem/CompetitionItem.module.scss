@@ -1,0 +1,10 @@
+@import "./../../../../--variables.scss";
+
+.competitionItemContainer {
+  border-bottom: 1px solid $white3;
+  color: $black2;
+  transition: 0.2s ease all;
+  &:hover {
+    border-bottom: 1px solid $red;
+  }
+}

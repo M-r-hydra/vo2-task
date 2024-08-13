@@ -21,7 +21,7 @@ const SidebarItem: React.FunctionComponent<SidebarItemProps> = ({ data }) => {
       className={({ isActive }) =>
         `${
           styles.sidebarItem
-        } flex flex-row items-center w-full justify-end py-2 mt-2 first-of-type::mt-0 rounded-lg px-2 ${
+        } flex flex-row-reverse items-center text-sm w-full justify-end py-2 mt-2 first-of-type::mt-0 rounded-lg px-2 ${
           isActive ? styles.activeItem : ""
         }`
       }

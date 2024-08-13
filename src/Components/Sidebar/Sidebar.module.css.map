@@ -1,1 +1,1 @@
-{"version":3,"sources":["Sidebar.module.scss","../../--variables.scss","Sidebar.module.css"],"names":[],"mappings":"AAEA;EACE,YAAA;EACA,oCCDO;ACAT","file":"Sidebar.module.css"}
+{"version":3,"sources":["Sidebar.module.scss","../../--variables.scss","Sidebar.module.css"],"names":[],"mappings":"AAEA;EACE,YAAA;EACA,oCCDO;EDEP,yBAAA;AEDF;;AFGA;EACE,uBAAA;AEAF","file":"Sidebar.module.css"}

@@ -1,6 +1,10 @@
 @import "./../../--variables.scss";
 
 .sidebarContainer {
-  width: 240px;
+  width: 140px;
   background-color: $white2;
+  transition: all 0.3s ease;
+}
+.full {
+  width: 240px !important;
 }

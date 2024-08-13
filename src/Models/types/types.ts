@@ -10,3 +10,5 @@ export type T_Route = {
   path: string;
   Element: React.FunctionComponent;
 };
+
+export type T_SidebarType = "small" | "full";
