@@ -33,7 +33,7 @@ const CompetitionItem: React.FunctionComponent<CompetitionItemProps> = ({
       }}
     >
       <span>{data.name}</span>
-      <span>{data.eventDate}</span>
+      <span className="ltr">{data.eventDate.replace("T", " ")}</span>
     </div>
   );
 };
